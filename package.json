@@ -2,13 +2,13 @@
   "name": "init",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
     "node":"16.x",
     "npm":"8.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "hossam",
   "license": "ISC",
