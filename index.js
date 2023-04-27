@@ -38,7 +38,7 @@ app.use("/api/comments", comments);
 app.use("/api/complaints", complaints);
 
 app.get("/", (req, res) => {
-  res.send(users)
+  res.send("hello World")
 })
 
 const port = process.env.PORT || 5000
