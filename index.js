@@ -37,7 +37,10 @@ app.use("/api/checkout", stripeRoute);
 app.use("/api/comments", Comments);
 app.use("/api/complaints", complaints);
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.send("Hello")
 })
 
