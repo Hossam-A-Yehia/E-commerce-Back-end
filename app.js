@@ -11,7 +11,7 @@ const cart = require("./routes/cart");
 const order = require("./routes/order");
 const category = require("./routes/categories");
 const stripeRoute = require("./routes/stripe")
-const Comments = require("./routes/comment")
+const comments = require("./routes/comment")
 const complaints = require("./routes/complaint")
 // Cors
 const corsOptions = {
@@ -34,16 +34,12 @@ app.use("/api/cart", cart)
 app.use("/api/order", order)
 app.use("/api/category", category)
 app.use("/api/checkout", stripeRoute);
-app.use("/api/comments", Comments);
+app.use("/api/comments", comments);
 app.use("/api/complaints", complaints);
 
 app.get("*", (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.send("Hello")
 })
-
 
 const port = process.env.PORT || 5000
 app.listen(port, () => console.log("Server Working"))
