@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node":"16.x",
-    "npm":"8.x"
-  },
+
   "scripts": {
     "start": "node index.js"
   },
   "author": "hossam",
+  "engines": {
+    "node":"16.x",
+    "npm":"8.x"
+  },
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
