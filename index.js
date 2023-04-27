@@ -14,8 +14,6 @@ const stripeRoute = require("./routes/stripe")
 const Comments = require("./routes/comment")
 const complaints = require("./routes/complaint")
 // Cors
-res.setHeader("Access-Control-Allow-Origin", "*");
-app.use(cors())
 const corsOptions = {
   origin: '*',
   credentials: true,
