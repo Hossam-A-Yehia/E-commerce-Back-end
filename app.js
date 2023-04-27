@@ -37,7 +37,7 @@ app.use("/api/checkout", stripeRoute);
 app.use("/api/comments", comments);
 app.use("/api/complaints", complaints);
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.send("hello World")
 })
 
