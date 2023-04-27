@@ -14,8 +14,13 @@ const stripeRoute = require("./routes/stripe")
 const Comments = require("./routes/comment")
 const complaints = require("./routes/complaint")
 // Cors
-app.options("*", cors());
-app.use(cors());
+app.use(cors())
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200
+}
+app.use(cors(corsOptions));
 /////////////// 
 dotenv.config()
 app.use(express.json())
@@ -33,7 +38,7 @@ app.use("/api/checkout", stripeRoute);
 app.use("/api/comments", Comments);
 app.use("/api/complaints", complaints);
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello")
 })
 
