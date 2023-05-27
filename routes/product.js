@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Product = require("../models/Product");
-const { verifyTokenAndAdmin } = require("./verifyToken");
 
 // Create
 router.post("/", async (req, res) => {
@@ -59,7 +58,7 @@ router.get("/", async (req, res) => {
   let product;
   try {
     if (qNew) {
-      product = await Product.find().sort({ createdAt: -1 }).limit(1);
+      product = await Product.find().sort({ createdAt: -1 }).limit(5);
     } else if (qCategory) {
       product = await Product.find({
         categories: {
